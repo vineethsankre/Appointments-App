@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {v4} from 'uuid'
+import {format} from 'date-fns'
 import AppointmentItem from '../AppointmentItem'
 import './index.css'
 
@@ -14,10 +15,13 @@ class Appointments extends Component {
   onAddAppointment = event => {
     event.preventDefault()
     const {titleInput, dateInput} = this.state
+    const formattedDate = dateInput
+      ? format(new Date(dateInput), 'dd MMMM yyyy, EEEE')
+      : ''
     const newAppointment = {
       id: v4(),
       title: titleInput,
-      date: dateInput,
+      date: formattedDate,
       isStarred: false,
     }
     this.setState(prevState => ({
