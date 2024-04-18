@@ -116,7 +116,7 @@ class Appointments extends Component {
             <button
               className={filterClassName}
               type="button"
-              onClick={this.showStarred}
+              onClick={this.onFilter}
             >
               Starred
             </button>
