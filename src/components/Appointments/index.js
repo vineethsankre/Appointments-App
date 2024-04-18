@@ -59,17 +59,6 @@ class Appointments extends Component {
     return appointmentList
   }
 
-  renderAppointmentsList = () => {
-    const {appointmentList} = this.state
-    return appointmentList.map(eachAppointment => (
-      <AppointmentItem
-        key={eachAppointment.id}
-        appointmentDetails={eachAppointment}
-        toggleStar={this.toggleStar}
-      />
-    ))
-  }
-
   onChangeTitle = event => {
     this.setState({titleInput: event.target.value})
   }
@@ -80,6 +69,9 @@ class Appointments extends Component {
 
   render() {
     const {titleInput, dateInput, isFilterActive} = this.state
+    const filterClassName = isFilterActive ? 'filter-filled' : 'filled-empty'
+    const filteredAppointmentsList = this.getFilteredAppointmentsList()
+
     return (
       <div className="app-container">
         <div className="appointment-container">
@@ -122,14 +114,22 @@ class Appointments extends Component {
           <div className="appointment-button-container">
             <h1 className="appointments-heading">Appointments</h1>
             <button
-              className="starred-btn"
+              className={filterClassName}
               type="button"
               onClick={this.showStarred}
             >
               Starred
             </button>
           </div>
-          <ul className="appointment-list">{this.renderAppointmentsList()}</ul>
+          <ul className="appointment-list">
+            {filteredAppointmentsList.map(eachAppointment => (
+              <AppointmentItem
+                key={eachAppointment.id}
+                appointmentDetails={eachAppointment}
+                toggleStar={this.toggleStar}
+              />
+            ))}
+          </ul>
         </div>
       </div>
     )
