@@ -74,62 +74,62 @@ class Appointments extends Component {
 
     return (
       <div className="app-container">
-        <div className="appointment-container">
-          <h1 className="title">Add Appointment</h1>
-          <form onSubmit={this.onAddAppointment}>
-            <div className="input-container">
-              <label className="label" htmlFor="title">
-                TITLE
-              </label>
-              <input
-                className="title-input"
-                type="text"
-                id="title"
-                value={titleInput}
-                onChange={this.onChangeTitle}
+        <div className="responsive-container">
+          <div className="appointment-container">
+            <div className="add-appointment-container">
+              <form onSubmit={this.onAddAppointment}>
+                <h1 className="title">Add Appointment</h1>
+                <label className="label" htmlFor="title">
+                  TITLE
+                </label>
+                <input
+                  className="title-input"
+                  type="text"
+                  id="title"
+                  value={titleInput}
+                  onChange={this.onChangeTitle}
+                />
+                <label className="label" htmlFor="date">
+                  DATE
+                </label>
+                <input
+                  className="date-input"
+                  type="date"
+                  id="date"
+                  value={dateInput}
+                  onChange={this.onChangeDate}
+                />
+                <button type="submit" className="add-button">
+                  Add
+                </button>
+              </form>
+              <img
+                className="image"
+                alt="appointments"
+                src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
               />
             </div>
-            <div className="input-container">
-              <label className="label" htmlFor="date">
-                DATE
-              </label>
-              <input
-                className="date-input"
-                type="date"
-                id="date"
-                value={dateInput}
-                onChange={this.onChangeDate}
-              />
+            <hr className="line" />
+            <div className="header-with-filter-container">
+              <h1 className="appointments-heading">Appointments</h1>
+              <button
+                className={filterClassName}
+                type="button"
+                onClick={this.onFilter}
+              >
+                Starred
+              </button>
             </div>
-            <button type="submit" className="add-button">
-              Add
-            </button>
-          </form>
-          <img
-            className="image"
-            alt="appointments"
-            src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
-          />
-          <hr className="line" />
-          <div className="appointment-button-container">
-            <h1 className="appointments-heading">Appointments</h1>
-            <button
-              className={filterClassName}
-              type="button"
-              onClick={this.onFilter}
-            >
-              Starred
-            </button>
+            <ul className="appointment-list">
+              {filteredAppointmentsList.map(eachAppointment => (
+                <AppointmentItem
+                  key={eachAppointment.id}
+                  appointmentDetails={eachAppointment}
+                  toggleStar={this.toggleStar}
+                />
+              ))}
+            </ul>
           </div>
-          <ul className="appointment-list">
-            {filteredAppointmentsList.map(eachAppointment => (
-              <AppointmentItem
-                key={eachAppointment.id}
-                appointmentDetails={eachAppointment}
-                toggleStar={this.toggleStar}
-              />
-            ))}
-          </ul>
         </div>
       </div>
     )
