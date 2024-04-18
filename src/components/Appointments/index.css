@@ -29,6 +29,14 @@
   width: 100%;
   margin-top: 64px;
 }
+.add-appointment-heading {
+  color: #171f46;
+  font-size: 22px;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
 .form {
   display: flex;
   flex-direction: column;

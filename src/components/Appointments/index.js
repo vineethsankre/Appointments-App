@@ -78,7 +78,7 @@ class Appointments extends Component {
           <div className="appointment-container">
             <div className="add-appointment-container">
               <form className="form" onSubmit={this.onAddAppointment}>
-                <h1 className="title">Add Appointment</h1>
+                <h1 className="add-appointment-heading">Add Appointment</h1>
                 <label className="label" htmlFor="title">
                   TITLE
                 </label>
