@@ -77,13 +77,13 @@ class Appointments extends Component {
         <div className="responsive-container">
           <div className="appointment-container">
             <div className="add-appointment-container">
-              <form onSubmit={this.onAddAppointment}>
+              <form className="form" onSubmit={this.onAddAppointment}>
                 <h1 className="title">Add Appointment</h1>
                 <label className="label" htmlFor="title">
                   TITLE
                 </label>
                 <input
-                  className="title-input"
+                  className="input"
                   type="text"
                   id="title"
                   value={titleInput}
@@ -93,7 +93,7 @@ class Appointments extends Component {
                   DATE
                 </label>
                 <input
-                  className="date-input"
+                  className="input"
                   type="date"
                   id="date"
                   value={dateInput}
@@ -113,14 +113,14 @@ class Appointments extends Component {
             <div className="header-with-filter-container">
               <h1 className="appointments-heading">Appointments</h1>
               <button
-                className={filterClassName}
+                className={`starred-btn ${filterClassName}`}
                 type="button"
                 onClick={this.onFilter}
               >
                 Starred
               </button>
             </div>
-            <ul className="appointment-list">
+            <ul className="appointments-list">
               {filteredAppointmentsList.map(eachAppointment => (
                 <AppointmentItem
                   key={eachAppointment.id}
