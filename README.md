@@ -64,7 +64,6 @@ Use these files to complete the implementation:
 
 - `src/components/Appointments/index.js`
 - `src/components/Appointments/index.css`
-- `src/components/AppointmentItem/index.js`
 </details>
 
 ### Quick Tips
