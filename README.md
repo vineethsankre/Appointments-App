@@ -136,5 +136,4 @@ Use these files to complete the implementation:
 
 - Roboto
 
-</details>
 
