@@ -61,9 +61,6 @@ The app must have the following functionalities
 <br/>
 
 Use these files to complete the implementation:
-
-- `src/components/Appointments/index.js`
-- `src/components/Appointments/index.css`
 </details>
 
 ### Quick Tips
