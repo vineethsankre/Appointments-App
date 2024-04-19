@@ -123,7 +123,6 @@ Use these files to complete the implementation:
 
 <div style="background-color: #9796f0; width: 150px; padding: 10px; color: black">Hex: #9796f0</div>
 <div style="background-color: #fbc7d4; width: 150px; padding: 10px; color: black">Hex: #fbc7d4</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
 
 </details>
 
